@@ -10,10 +10,10 @@ class Employee(models.Model):
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     position = models.ForeignKey(Position, on_delete=models.CASCADE)
     rank = models.ForeignKey(Rank, on_delete=models.CASCADE)
-    academic_degree = models.ForeignKey(AcademicDegree, on_delete=models.CASCADE)
-    academic_rank = models.ForeignKey(AcademicRank, on_delete=models.CASCADE)
+    academic_degree = models.ForeignKey(AcademicDegree, on_delete=models.CASCADE, null=True)
+    academic_rank = models.ForeignKey(AcademicRank, on_delete=models.CASCADE, null=True)
     specialty = models.CharField(max_length=255)
-    protected_time = models.DateTimeField(auto_now_add=True)
+    protected_time = models.DateField()
 
 
     def __str__(self):
